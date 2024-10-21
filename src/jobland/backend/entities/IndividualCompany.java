@@ -1,3 +1,4 @@
+package jobland.backend.entities;
 
 public class IndividualCompany extends Company{
 	String individualName;

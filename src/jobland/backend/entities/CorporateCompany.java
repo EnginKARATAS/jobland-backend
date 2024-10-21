@@ -1,3 +1,4 @@
+package jobland.backend.entities;
 
 public class CorporateCompany extends Company{
 	private int taxNumber;

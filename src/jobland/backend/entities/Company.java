@@ -1,3 +1,4 @@
+package jobland.backend.entities;
 
 public class Company {
 	private int id;
@@ -6,17 +7,35 @@ public class Company {
 	private String website;
 	private String location;
 	private double companyPrice;
- 
-	public void setCorporateName(String corporateName) {
+	
+	public Company() {
+  	}
+
+	public Company(int id, String corporateName, String email, String website, String location, double companyPrice) {
+ 		this.id = id;
 		this.corporateName = corporateName;
+		this.email = email;
+		this.website = website;
+		this.location = location;
+		this.companyPrice = companyPrice;
 	}
-	public String getCorporateName() {
-		return corporateName;
-	}
+
 	public int getId() {
 		return id;
 	}
-	
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCorporateName() {
+		return corporateName;
+	}
+
+	public void setCorporateName(String corporateName) {
+		this.corporateName = corporateName;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -48,5 +67,6 @@ public class Company {
 	public void setCompanyPrice(double companyPrice) {
 		this.companyPrice = companyPrice;
 	}
+	
 
 }
