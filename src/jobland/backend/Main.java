@@ -1,12 +1,16 @@
 package jobland.backend;
-import java.util.Iterator;
+
+ 
 
 import jobland.backend.business.CompanyManager;
-import jobland.backend.dataAccess.HibernateCompanyDao;
 import jobland.backend.dataAccess.JDBCCompanyDao;
 import jobland.backend.entities.Company;
 import jobland.backend.entities.CorporateCompany;
 import jobland.backend.entities.IndividualCompany;
+import jobland.backend.logging.DBLogger;
+import jobland.backend.logging.ELKLogger;
+import jobland.backend.logging.FileLogger;
+import jobland.backend.logging.Logger;
 
 public class Main {
 
@@ -29,7 +33,8 @@ public class Main {
 			System.out.println(companyItem.getCorporateName() + " application successful");
 		}
 		
-		CompanyManager companyManager = new CompanyManager(new JDBCCompanyDao());
+		Logger[] loggers = {new DBLogger(), new ELKLogger(), new FileLogger()};
+		CompanyManager companyManager = new CompanyManager(new JDBCCompanyDao(), loggers);
 		companyManager.add(corporate);
 
 	}
