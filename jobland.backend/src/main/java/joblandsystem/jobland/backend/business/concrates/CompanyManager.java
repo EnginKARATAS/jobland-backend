@@ -14,13 +14,12 @@ public class CompanyManager implements CompanyService{
 	
 	
 	public CompanyManager(CompanyRepository companyRepository) {
-		super();
 		this.companyRepository = companyRepository;
 	}
 
 	@Override
 	public List<Company> getAll() {
-		return this.companyRepository.getAll();
+		return this.companyRepository.findAll();
 	}
  
 
