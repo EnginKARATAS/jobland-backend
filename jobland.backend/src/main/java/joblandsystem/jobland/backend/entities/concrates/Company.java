@@ -1,9 +1,10 @@
 package joblandsystem.jobland.backend.entities.concrates;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
- import lombok.Getter;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Company {
 	private int id;
 	private String corporateName;
@@ -19,5 +21,4 @@ public class Company {
 	private String website;
 	private String location;
 	private double companyPrice;
-
 }
